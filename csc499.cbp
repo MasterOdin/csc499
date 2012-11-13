@@ -19,6 +19,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="BNode.cpp" />
+		<Unit filename="BNode.h" />
+		<Unit filename="README.md" />
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -37,12 +37,31 @@ void BNode::setArity()
 	}
 	arity = temp;
 	ProbTable = new double[arity];
+	readInProb();
 }
 
 void BNode::setArity(int a)
 {
 	arity = a;
 	ProbTable = new double[arity];
+	readInProb();
+}
+
+void BNode::readInProb()
+{
+	ifstream probFile;
+	string temp = "data/" + name + ".txt";
+	string line;
+	int count = 0;
+	probFile.open(temp.c_str());
+	if(probFile.is_open())
+	{
+		while(probFile.good())
+		{
+			getline(probFile,line);
+			ProbTable[count++] = atoi(line.c_str());
+		}
+	}
 }
 
 BNode::~BNode()
