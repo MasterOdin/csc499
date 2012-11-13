@@ -3,6 +3,7 @@ bin/
 bin-debug/
 bin-release/
 obj/
+obj\Debug\
 
 # Other files and folders
 .settings/
