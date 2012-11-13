@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1352782708 source:z:\work\github\csc499\main.cpp
+	<stdio.h>
+	"BNode.h"
+
+1352783118 z:\work\github\csc499\bnode.h
+	<string>
+
+1352781846 source:z:\work\github\csc499\bnode.cpp
+	"BNode.h"
+
