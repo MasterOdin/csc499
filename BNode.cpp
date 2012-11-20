@@ -61,7 +61,7 @@ void BNode::readInProb()
 		while(probFile.good() && count < arity)
 		{
 			getline(probFile,line);
-			tmp = (atoi(line.c_str())/100;
+			tmp = (atoi(line.c_str()))/100;
 			tmp = (tmp < 0) ? 0 : tmp;
 			ProbTable[count++] = tmp;
 		}
