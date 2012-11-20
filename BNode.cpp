@@ -9,9 +9,10 @@ BNode::BNode()
 	arity = 0;
 }
 
-BNode::BNode(string title)
+BNode::BNode(string n, string k)
 {
-	name = title;
+	key = k;
+	name = n;
 	numOfP = 0;
 	numOfC = 0;
 	arity = 0;
@@ -50,16 +51,19 @@ void BNode::setArity(int a)
 void BNode::readInProb()
 {
 	ifstream probFile;
-	string temp = "data/" + name + ".txt";
+	string temp = "data/" + key + ".txt";
 	string line;
 	int count = 0;
+	int tmp = 0;
 	probFile.open(temp.c_str());
 	if(probFile.is_open())
 	{
-		while(probFile.good())
+		while(probFile.good() && count < arity)
 		{
 			getline(probFile,line);
-			ProbTable[count++] = atoi(line.c_str());
+			tmp = (atoi(line.c_str())/100;
+			tmp = (tmp < 0) ? 0 : tmp;
+			ProbTable[count++] = tmp;
 		}
 	}
 }

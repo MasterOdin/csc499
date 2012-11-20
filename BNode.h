@@ -17,7 +17,7 @@ class BNode
 		/* Default Constructor */
 		BNode();
 		/* Constructor - Sets name with string parameter */
-		BNode(string);
+		BNode(string,string);
 		void setParent(BNode *);
 		void setChild(BNode *);
 		void setArity();
@@ -33,6 +33,7 @@ class BNode
 		int arity;
 		double * ProbTable;
 		string name;
+		string key;
 	private:
 };
 
