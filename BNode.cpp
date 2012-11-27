@@ -18,15 +18,39 @@ BNode::BNode(string n, string k)
 	arity = 0;
 }
 
+string BNode::getName()
+{
+	return name;
+}
+
+string BNode::getKey()
+{
+	return key;
+}
+
 void BNode::setParent(BNode * node)
 {
 	parents[numOfP++] = node;
+}
+
+void BNode::printParents()
+{
+	/* to do: print parents */
+	for(int i = 0; i < numOfP; i++)
+	{
+		cout << parents[i]->getName() << endl;
+	}
 }
 
 void BNode::setChild(BNode * node)
 {
 	children[numOfC++] = node;
 	node->setParent(this);
+}
+
+void BNode::printChildren()
+{
+	/* to do: print children */
 }
 
 void BNode::setArity()
@@ -48,6 +72,11 @@ void BNode::setArity(int a)
 	readInProb();
 }
 
+int BNode::getArity()
+{
+	return arity;
+}
+
 void BNode::readInProb()
 {
 	ifstream probFile;
@@ -66,6 +95,11 @@ void BNode::readInProb()
 			ProbTable[count++] = tmp;
 		}
 	}
+}
+
+double BNode::getProbability(int n)
+{
+		return ProbTable[n];
 }
 
 BNode::~BNode()

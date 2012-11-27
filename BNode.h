@@ -18,11 +18,17 @@ class BNode
 		BNode();
 		/* Constructor - Sets name with string parameter */
 		BNode(string,string);
+		string getName();
+		string getKey();
 		void setParent(BNode *);
+		void printParents();
 		void setChild(BNode *);
+		void printChildren();
 		void setArity();
+		int getArity();
 		void setArity(int);
 		void readInProb();
+		double getProbability(int);
 		~BNode();
 
 	protected:

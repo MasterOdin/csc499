@@ -11,9 +11,9 @@ int main(int argc, const char* argv[])
 
 	nodeArray[0] = new BNode("Population","population");
 	nodeArray[0]->setArity(3);
-	nodeArray[1] = new BNode("Time of Day","timeOfDay");
+	nodeArray[1] = new BNode("Lighting","lighting");
 	nodeArray[1]->setArity(5);
-	nodeArray[2] = new BNode("Lighting","lighting");
+	nodeArray[2] = new BNode("Time of Day","timeOfDay");
 	nodeArray[2]->setArity(5);
 	nodeArray[3] = new BNode("Drugs","drugs");
 	nodeArray[3]->setArity(5);
@@ -35,5 +35,12 @@ int main(int argc, const char* argv[])
 	nodeArray[7]->setArity();
 	nodeArray[8]->setArity();
 
+
+	cout << "Murder: " << nodeArray[6]->getArity() << endl;
+	nodeArray[6]->printParents();
+	cout << "Robbery: " << nodeArray[7]->getArity() << endl;
+	nodeArray[7]->printParents();
+	cout << "Rape: " << nodeArray[8]->getArity() << endl;
+	nodeArray[8]->printParents();
 	return 0;
 }
