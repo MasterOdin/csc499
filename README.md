@@ -5,12 +5,16 @@ Fall 2012, Matthew Peveler
 Bayesian Network Application for Criminology Based Research
 
 Compiled using GCC Compiler and the Code::Blocks (10.05) IDE
+
 Last Build: 12/12/2012 @ 2:11 PM
+
 Last Update Notes:
+
 	Added methods for getting probability for parent nodes and children nodes
 
 Data format:
-Murder/Rape/Robbery column order:
+
+Murder/Rape/Robbery column order: \w
 1. Population
 2. Lighting
 3. Time of Day
