@@ -36,11 +36,36 @@ int main(int argc, const char* argv[])
 	nodeArray[8]->setArity();
 
 
-	cout << "Murder: " << nodeArray[6]->getArity() << endl;
+	/*cout << "Murder: " << nodeArray[6]->getArity() << endl;
 	nodeArray[6]->printParents();
 	cout << "Robbery: " << nodeArray[7]->getArity() << endl;
 	nodeArray[7]->printParents();
 	cout << "Rape: " << nodeArray[8]->getArity() << endl;
-	nodeArray[8]->printParents();
+	nodeArray[8]->printParents();*/
+
+	int array[6];
+	for(int i = 0; i < 6; i++)
+	{
+		array[i] = 1;
+	}
+	//cout << "Probability of Murder with (P=1,Light=1,ToD=1,Drugs=1,Lat=1,Lfrom=1) = " << nodeArray[6]->getProbability(array) << endl;
+
+
+	for(int i = 0; i < 10; i++)
+	{
+		cout << nodeArray[6]->getProbability(array) << endl;
+		array[5]++;
+	}
+
+	array[0] = 2;
+	array[1] = 4;
+	array[2] = 5;
+	array[3] = 5;
+	array[4] = 3;
+	array[5] = 1;
+
+	cout << nodeArray[6]->getProbability(array) << endl;
+	cout << nodeArray[0]->getProbability(2) << endl;
+
 	return 0;
 }

@@ -83,14 +83,16 @@ void BNode::readInProb()
 	string temp = "data/" + key + ".txt";
 	string line;
 	int count = 0;
-	int tmp = 0;
+	double tmp = 0;
 	probFile.open(temp.c_str());
 	if(probFile.is_open())
 	{
 		while(probFile.good() && count < arity)
 		{
+
 			getline(probFile,line);
-			tmp = (atoi(line.c_str()))/100;
+			tmp = (atoi(line.c_str()));
+			tmp = tmp/100;
 			tmp = (tmp < 0) ? 0 : tmp;
 			ProbTable[count++] = tmp;
 		}
@@ -99,7 +101,25 @@ void BNode::readInProb()
 
 double BNode::getProbability(int n)
 {
-		return ProbTable[n];
+	return ProbTable[n-1];
+}
+
+double BNode::getProbability(int n[])
+{
+	int tmp = 1;
+	int actualP = 0;
+	for(int i = (numOfP-1); i >= 0; i--)
+	{
+		if((n[i]-1) > parents[i]->getArity())
+		{
+			// return negative number to indicate error in bounds
+			return -1;
+		}
+		actualP += (n[i]-1)*tmp;
+		tmp *= parents[i]->getArity();
+	}
+
+	return ProbTable[actualP];
 }
 
 BNode::~BNode()

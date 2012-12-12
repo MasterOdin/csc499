@@ -1,6 +1,6 @@
 #ifndef BNODE_H
 #define BNODE_H
-#include <string>
+#include <string.h>
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
@@ -29,6 +29,7 @@ class BNode
 		void setArity(int);
 		void readInProb();
 		double getProbability(int);
+		double getProbability(int n[]);
 		~BNode();
 
 	protected:
