@@ -12,9 +12,18 @@ Last Update Notes:
 
 	Added methods for getting probability for parent nodes and children nodes
 
+Some Explanation:
+Below is how the columns in the excel spreadsheet (and the subsequent values in the children nodes)
+are organized, as well as the node order for referencing by nodeArray[i]. Hopefully things make sense
+
 Data format:
 
+<<<<<<< HEAD
 Murder/Rape/Robbery column order: \w
+=======
+Murder/Rape/Robbery column order:
+
+>>>>>>> updated readme to actually use .md style
 1. Population
 2. Lighting
 3. Time of Day
@@ -23,6 +32,7 @@ Murder/Rape/Robbery column order: \w
 6. Location From
 
 Node ID is:
+
 0. Population
 1. Lighting
 2. Time of Day
